@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect, useMemo } from 'react';
-import { Play, Pause, SkipBack, SkipForward, Volume2, VolumeX, Upload, Music, Image as ImageIcon, Repeat, Shuffle } from 'lucide-react';
+import { Play, Pause, SkipBack, SkipForward, Volume2, VolumeX, Upload, Music, Image as ImageIcon, Repeat, Shuffle, Repeat1 } from 'lucide-react';
 
 const defaultLyrics = `[00:00.00]Yeah! Let's go!
 [00:15.80]The sun is shining down across the eastern coast
@@ -59,6 +59,7 @@ export default function MusicPlayer() {
   const [isMuted, setIsMuted] = useState(false);
   const [isHoveringProgress, setIsHoveringProgress] = useState(false);
   const [activeLyricIndex, setActiveLyricIndex] = useState(0);
+  const [playMode, setPlayMode] = useState<'sequence' | 'repeat-one' | 'shuffle'>('sequence');
 
   // Use the provided image and audio files
   const coverImage = '/cover.png';
@@ -103,6 +104,43 @@ export default function MusicPlayer() {
       audioRef.current?.play();
     }
     setIsPlaying(!isPlaying);
+  };
+
+  const handleEnded = () => {
+    if (playMode === 'repeat-one' || playMode === 'shuffle') {
+      if (audioRef.current) {
+        audioRef.current.currentTime = 0;
+        audioRef.current.play();
+      }
+    } else {
+      setIsPlaying(false);
+      setProgress(0);
+      if (audioRef.current) {
+        audioRef.current.currentTime = 0;
+      }
+    }
+  };
+
+  const handleSkipForward = () => {
+    handleEnded();
+  };
+
+  const handleSkipBack = () => {
+    if (audioRef.current) {
+      audioRef.current.currentTime = 0;
+      if (!isPlaying) {
+        audioRef.current.play();
+        setIsPlaying(true);
+      }
+    }
+  };
+
+  const toggleShuffle = () => {
+    setPlayMode(prev => prev === 'shuffle' ? 'sequence' : 'shuffle');
+  };
+
+  const toggleRepeat = () => {
+    setPlayMode(prev => prev === 'repeat-one' ? 'sequence' : 'repeat-one');
   };
 
   const handleTimeUpdate = () => {
@@ -173,7 +211,7 @@ export default function MusicPlayer() {
           src={audioSrc || undefined}
           onTimeUpdate={handleTimeUpdate}
           onLoadedMetadata={handleLoadedMetadata}
-          onEnded={() => setIsPlaying(false)}
+          onEnded={handleEnded}
         />
 
         {/* Header */}
@@ -319,12 +357,16 @@ export default function MusicPlayer() {
 
         {/* Main Controls */}
         <div className="flex items-center justify-between mb-8 px-2">
-          <button className="text-neutral-400 hover:text-white transition-colors">
+          <button 
+            onClick={toggleShuffle} 
+            className={`transition-colors ${playMode === 'shuffle' ? 'text-[#1db954]' : 'text-neutral-400 hover:text-white'}`}
+            title="随机播放"
+          >
             <Shuffle size={20} />
           </button>
 
           <div className="flex items-center gap-6">
-            <button className="text-neutral-400 hover:text-white transition-colors">
+            <button onClick={handleSkipBack} className="text-neutral-400 hover:text-white transition-colors" title="上一首">
               <SkipBack size={28} fill="currentColor" />
             </button>
 
@@ -343,13 +385,17 @@ export default function MusicPlayer() {
               )}
             </button>
 
-            <button className="text-neutral-400 hover:text-white transition-colors">
+            <button onClick={handleSkipForward} className="text-neutral-400 hover:text-white transition-colors" title="下一首">
               <SkipForward size={28} fill="currentColor" />
             </button>
           </div>
 
-          <button className="text-neutral-400 hover:text-white transition-colors">
-            <Repeat size={20} />
+          <button 
+            onClick={toggleRepeat}
+            className={`transition-colors ${playMode === 'repeat-one' ? 'text-[#1db954]' : 'text-neutral-400 hover:text-white'}`}
+            title={playMode === 'repeat-one' ? "单曲循环" : "按顺序播放"}
+          >
+            {playMode === 'repeat-one' ? <Repeat1 size={20} /> : <Repeat size={20} />}
           </button>
         </div>
 
