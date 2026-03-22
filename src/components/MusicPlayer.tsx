@@ -62,7 +62,7 @@ export default function MusicPlayer() {
   const [playMode, setPlayMode] = useState<'sequence' | 'repeat-one' | 'shuffle'>('sequence');
 
   // Use the provided image and audio files
-  const coverImage = '/cover.png';
+  const coverImage = '/cover.jpg';
   const audioSrc = '/A Kendra Kind of Day.mp3';
   const songTitle = 'A Kendra Kind of Day';
   const artistName = 'Kendra Fishman';
