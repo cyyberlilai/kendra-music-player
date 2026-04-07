@@ -45,7 +45,7 @@ Make sure you have [Node.js](https://nodejs.org/) installed on your machine.
    npm run dev
    ```
 
-4. Open your browser and visit the URL shown in your terminal (usually `http://localhost:3000` or `http://localhost:5173`).
+4. Open your browser and visit the URL shown in your terminal (usually `http://localhost:3000`).
 
 ## Usage
 
