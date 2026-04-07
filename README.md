@@ -49,8 +49,7 @@ Make sure you have [Node.js](https://nodejs.org/) installed on your machine.
 
 - **Play Music**: Click the play button to start the default birthday track.
 - **View Lyrics**: The lyrics panel will automatically scroll and highlight the current line based on the timestamp.
-- **Upload Own Music**: Click the upload icon to select an audio file from your device.
-- **Change Cover Art**: Click the image icon to set a custom album cover.
+  
 
 ## Scripts
 
