@@ -32,7 +32,7 @@ Make sure you have [Node.js](https://nodejs.org/) installed on your machine.
 
 1. Clone the repository or navigate to the project folder:
    ```bash
-   cd kendra-music-player-master
+   cd kendra-music-player
    ```
 
 2. Install the dependencies using npm (or your preferred package manager like `yarn` or `bun`):
