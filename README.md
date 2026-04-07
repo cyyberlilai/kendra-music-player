@@ -2,7 +2,6 @@
 
 A sleek, modern, and interactive React-based music player. This project was specifically designed to celebrate Kendra Fishman's 49th birthday with a custom song, "A Kendra Kind of Day," complete with synchronized LRC lyrics.
 
-![Music Player Interface](public/vite.svg) <!-- Replace with actual screenshot if available -->
 
 ## Features
 
