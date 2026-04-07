@@ -1,5 +1,7 @@
 # Kendra Music Player
 
+🚀 Live Demo: [https://spritemotion.framesecond.uk/](https://kendra.framesecond.uk/)
+
 A sleek, modern, and interactive React-based music player. This project was specifically designed to celebrate Kendra Fishman's 49th birthday with a custom song, "A Kendra Kind of Day," complete with synchronized LRC lyrics.
 
 
