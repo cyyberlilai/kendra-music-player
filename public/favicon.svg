@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <radialGradient id="label" cx="32%" cy="28%" r="82%">
+      <stop offset="0%" stop-color="#52dd85"/>
+      <stop offset="55%" stop-color="#1db954"/>
+      <stop offset="100%" stop-color="#128c46"/>
+    </radialGradient>
+    <filter id="gloss" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="1.1"/>
+    </filter>
+    <linearGradient id="pivot" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#3a3a3a"/>
+      <stop offset="100%" stop-color="#0a0a0a"/>
+    </linearGradient>
+    <linearGradient id="pivotRing" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0%" stop-color="#777777"/>
+      <stop offset="100%" stop-color="#ffffff"/>
+    </linearGradient>
+    <linearGradient id="weight" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#444444"/>
+      <stop offset="50%" stop-color="#aaaaaa"/>
+      <stop offset="100%" stop-color="#222222"/>
+    </linearGradient>
+    <linearGradient id="shell" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#2e2e2e"/>
+      <stop offset="100%" stop-color="#0a0a0a"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#d4af37"/>
+      <stop offset="100%" stop-color="#997a00"/>
+    </linearGradient>
+  </defs>
+
+  <circle cx="30" cy="35" r="26" fill="#0a0a0a"/>
+  <circle cx="30" cy="35" r="26" fill="none" stroke="#ffffff" stroke-width="2.4"/>
+  <circle cx="30" cy="35" r="20.5" fill="none" stroke="#ffffff" stroke-opacity="0.07" stroke-width="1.3"/>
+  <circle cx="30" cy="35" r="15.5" fill="none" stroke="#ffffff" stroke-opacity="0.05" stroke-width="1.3"/>
+  <path d="M12.5 26.5A19.5 19.5 0 0 1 25 16.2" fill="none" stroke="#ffffff" stroke-opacity="0.14" stroke-width="2.6" stroke-linecap="round"/>
+
+  <circle cx="30" cy="35" r="11" fill="url(#label)"/>
+  <ellipse cx="26.5" cy="30.5" rx="4.5" ry="3" transform="rotate(-24 26.5 30.5)" fill="#ffffff" fill-opacity="0.22" filter="url(#gloss)"/>
+  <circle cx="30" cy="35" r="2.7" fill="#f5f2ea"/>
+
+  <g transform="translate(53.3 7.7) rotate(24.4)">
+    <rect x="-1.9" y="-5" width="3.8" height="5" rx="1.2" fill="url(#weight)" stroke="#000000" stroke-opacity="0.5" stroke-width="0.5"/>
+  </g>
+  <path d="M52.5 9.5 46.2 23.6" stroke="#6f6f6f" stroke-width="3" stroke-linecap="round"/>
+  <path d="M51.9 9.2 45.6 23.3" stroke="#e8e8e8" stroke-width="1.1" stroke-linecap="round"/>
+  <circle cx="52.5" cy="9.5" r="4.8" fill="url(#pivot)" stroke="#555555" stroke-width="0.8"/>
+  <circle cx="52.5" cy="9.5" r="3" fill="url(#pivotRing)" stroke="#222222" stroke-width="0.6"/>
+  <circle cx="52.5" cy="9.5" r="1.1" fill="#111111"/>
+  <g transform="translate(45.4 27.2) rotate(24)">
+    <rect x="-1.2" y="-6.2" width="2.4" height="3" rx="0.6" fill="#333333"/>
+    <rect x="-3" y="-4.5" width="6" height="10" rx="1.8" fill="url(#shell)" stroke="#4a4a4a" stroke-width="0.9"/>
+    <rect x="-1.6" y="2.4" width="3.2" height="3.4" rx="0.6" fill="url(#gold)"/>
+    <rect x="-0.45" y="5.8" width="0.9" height="2.4" fill="#ef4444"/>
+  </g>
+</svg>
